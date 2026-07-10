@@ -30,30 +30,52 @@ st.markdown("""
     border-radius: 8px !important;
   }
 
-  /* Metric cards */
+  /* Metric cards — fix visibility */
   [data-testid="metric-container"] {
-    background: white;
-    border-radius: 12px;
-    padding: 16px 20px;
-    border: 1px solid #AED6F1;
-    box-shadow: 0 2px 8px rgba(27,79,114,0.08);
+    background: white !important;
+    border-radius: 12px !important;
+    padding: 16px 20px !important;
+    border: 1px solid #AED6F1 !important;
+    box-shadow: 0 2px 8px rgba(27,79,114,0.10) !important;
   }
-  [data-testid="metric-container"] label {
-    color: #7F8C8D !important;
+  [data-testid="metric-container"] label,
+  [data-testid="metric-container"] [data-testid="stMetricLabel"] p,
+  [data-testid="metric-container"] [data-testid="stMetricLabel"] * {
+    color: #5D6D7E !important;
     font-size: 12px !important;
-    font-weight: 600 !important;
+    font-weight: 700 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.5px !important;
+    opacity: 1 !important;
   }
-  [data-testid="metric-container"] [data-testid="stMetricValue"] {
+  [data-testid="metric-container"] [data-testid="stMetricValue"],
+  [data-testid="metric-container"] [data-testid="stMetricValue"] * {
     color: #1B4F72 !important;
     font-size: 22px !important;
-    font-weight: 700 !important;
+    font-weight: 800 !important;
+    opacity: 1 !important;
+  }
+  [data-testid="metric-container"] [data-testid="stMetricDelta"],
+  [data-testid="metric-container"] [data-testid="stMetricDelta"] * {
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    opacity: 1 !important;
+  }
+
+  /* Emoji icons in metric labels */
+  [data-testid="metric-container"] [data-testid="stMetricLabel"] {
+    color: #2C3E50 !important;
   }
 
   /* Headers */
   h1 { color: #1B4F72 !important; }
   h2, h3 { color: #2E86C1 !important; }
+
+  /* Main page text */
+  .stMarkdown p { color: #2C3E50 !important; }
+
+  /* Success/info/warning banners */
+  [data-testid="stAlert"] p { color: #1A252F !important; }
 
   /* Download button */
   .stDownloadButton button {
@@ -65,27 +87,37 @@ st.markdown("""
     font-size: 15px !important;
     font-weight: 700 !important;
     width: 100% !important;
-    cursor: pointer !important;
-    transition: opacity 0.2s !important;
   }
   .stDownloadButton button:hover { opacity: 0.88 !important; }
+
+  /* Primary button */
+  [data-testid="baseButton-primary"] {
+    background: linear-gradient(135deg, #1B4F72, #2E86C1) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 10px !important;
+    font-weight: 700 !important;
+  }
 
   /* Tabs */
   .stTabs [data-baseweb="tab-list"] {
     gap: 4px;
-    background: #EBF5FB;
+    background: #D6EAF8;
     border-radius: 10px;
     padding: 4px;
   }
   .stTabs [data-baseweb="tab"] {
     border-radius: 8px;
     font-weight: 600;
-    color: #1B4F72;
+    color: #1B4F72 !important;
   }
   .stTabs [aria-selected="true"] {
     background: white !important;
     color: #1B4F72 !important;
   }
+
+  /* Tab content text */
+  .stTabs p, .stTabs label { color: #2C3E50 !important; }
 
   /* Dataframe */
   [data-testid="stDataFrame"] { border-radius: 10px; }
@@ -98,6 +130,21 @@ st.markdown("""
     border: 1px solid #AED6F1;
     margin-bottom: 16px;
     box-shadow: 0 2px 8px rgba(27,79,114,0.06);
+  }
+
+  /* General text visibility fix */
+  .stApp p, .stApp span, .stApp div {
+    color: #2C3E50;
+  }
+
+  /* Spinner text */
+  [data-testid="stSpinner"] p { color: #1B4F72 !important; }
+
+  /* File uploader */
+  [data-testid="stFileUploaderDropzone"] {
+    background: rgba(255,255,255,0.12) !important;
+    border: 2px dashed rgba(255,255,255,0.4) !important;
+    border-radius: 10px !important;
   }
 </style>
 """, unsafe_allow_html=True)
