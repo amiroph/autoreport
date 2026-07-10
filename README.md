@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 📊 AutoReport — Banking Financial Report Generator
 
 > A Python-powered financial report automation system that replaces JasperReports with a modern Streamlit web app.
@@ -27,3 +28,6 @@ streamlit run app.py
 
 ## Deploy
 Deployed on Render as a web service.
+=======
+# autoreport
+>>>>>>> 1c8a4a84615a0cddb7247b0d6f9cc82d2aaf94e2
